@@ -21,8 +21,8 @@ const ForumProvider = ({ children }) => {
 
   const sortByLatest = () => {
     const updatedDataRec = state.allForumData.sort((a, b) => {
-      let date1 = new Date(a.createdAt).getTime();
-      let date2 = new Date(b.createdAt).getTime();
+      let date1 = new Date(b.createdAt).getTime();
+      let date2 = new Date(a.createdAt).getTime();
       console.log(
         "new Date(b.createdAt).getTime()====",
         new Date(b.createdAt).getTime()

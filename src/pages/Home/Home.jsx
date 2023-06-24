@@ -65,7 +65,7 @@ const Home = () => {
                             new Date(user.createdAt).getTime()) /
                             (1000 * 60 * 60)
                         )}{" "}
-                        hrs
+                        hrs ago
                       </span>
                     </p>
                   </div>
