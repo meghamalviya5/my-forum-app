@@ -3,7 +3,7 @@ import { ForumContext } from "../../contexts/ForumContext";
 
 const FilterSideBar = () => {
   console.log("in filter");
-  useEffect(() => sortByLatest(), []);
+  //   useEffect(() => sortByLatest(), []);
   const { sortByMostVoted, sortByLatest } = useContext(ForumContext);
   return (
     <div>

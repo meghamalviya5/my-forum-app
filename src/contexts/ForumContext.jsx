@@ -38,7 +38,7 @@ const ForumProvider = ({ children }) => {
 
   return (
     <ForumContext.Provider
-      value={{ sortByMostVoted, sortByLatest, setBookmark, state }}
+      value={{ sortByMostVoted, sortByLatest, setBookmark, state, dispatch }}
     >
       {children}
     </ForumContext.Provider>

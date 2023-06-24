@@ -4,18 +4,23 @@ export const forumreducer = (state, action) => {
       return { ...state, allForumData: action.payload };
 
     case "INCREMENT_VOTE":
-      const user = state.allForumData.find((user) => user.postId === postId);
-      if (user) {
-        user.upvotes = user.upvotes + 1;
-      }
-      return { ...state, allForumData: action.payload };
+      const data = state.allForumData.map((user) => {
+        if (user.postId === action.payload) {
+          user.upvotes = user.upvotes + 1;
+        }
+        return user;
+      });
+      return { ...state, allForumData: data };
 
     case "DECREMENT_VOTE":
-      const userD = state.allForumData.find((user) => user.postId === postId);
-      if (user) {
-        user.upvotes = user.upvotes - 1;
-      }
-      return { ...state, allForumData: action.payload };
+      const userData = state.allForumData.map((user) => {
+        if (user.postId === action.payload) {
+          user.upvotes = user.upvotes - 1;
+        }
+        return user;
+      });
+
+      return { ...state, allForumData: userData };
     default:
       return { state };
   }
