@@ -13,7 +13,7 @@ const FilterSideBar = () => {
           e.target.value === "Most Voted" ? sortByMostVoted() : sortByLatest()
         }
       >
-        {/* <option value="Select">Select</option> */}
+        <option value="Select">Select</option>
         <option value="Latest Posts">Latest Posts</option>
         <option value="Most Voted">Most Voted</option>
       </select>
