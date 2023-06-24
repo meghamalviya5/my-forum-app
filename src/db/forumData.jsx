@@ -40,7 +40,7 @@ export const forumData = {
       upvotes: 850,
       downvotes: 0,
       tags: ["html", "javascript", "web development"],
-      createdAt: "2023-06-24T12:54:00Z",
+      createdAt: "2023-06-24T12:54:00.000Z",
       comments: [],
       isBookmarked: false,
     },

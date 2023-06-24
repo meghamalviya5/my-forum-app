@@ -21,7 +21,18 @@ const ForumProvider = ({ children }) => {
 
   const sortByLatest = () => {
     const updatedDataRec = state.allForumData.sort((a, b) => {
-      return a.createdAt - b.createdAt;
+      let date1 = new Date(a.createdAt).getTime();
+      let date2 = new Date(b.createdAt).getTime();
+      console.log(
+        "new Date(b.createdAt).getTime()====",
+        new Date(b.createdAt).getTime()
+      );
+      console.log(
+        "new Date(a.createdAt).getTime()====",
+        new Date(a.createdAt).getTime()
+      );
+      console.log("date1 - date2==========", date1 - date2);
+      return date1 - date2;
     });
     dispatch({ type: "UPDATE_FORUM_DATA", payload: updatedDataRec });
   };
