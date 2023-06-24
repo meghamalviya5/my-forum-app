@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ForumContext } from "../../contexts/ForumContext";
 
 const FilterSideBar = () => {
   console.log("in filter");
+  useEffect(() => sortByLatest(), []);
   const { sortByMostVoted, sortByLatest } = useContext(ForumContext);
   return (
     <div>
@@ -12,9 +13,9 @@ const FilterSideBar = () => {
           e.target.value === "Most Voted" ? sortByMostVoted() : sortByLatest()
         }
       >
-        <option value="Select">Select</option>
-        <option value="Most Voted">Most Voted</option>
+        {/* <option value="Select">Select</option> */}
         <option value="Latest Posts">Latest Posts</option>
+        <option value="Most Voted">Most Voted</option>
       </select>
     </div>
   );

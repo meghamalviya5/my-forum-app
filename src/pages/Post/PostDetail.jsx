@@ -7,13 +7,17 @@ import {
   faBookmark as faBookmarkSolid,
 } from "@fortawesome/free-solid-svg-icons";
 import "../../styles.css";
-import { faBookmark as faBookmarkLight } from "@fortawesome/free-regular-svg-icons";
+import {
+  faBookmark as faBookmarkLight,
+  faSquarePlus,
+  faMinusSquare,
+} from "@fortawesome/free-regular-svg-icons";
 import { ForumContext } from "../../contexts/ForumContext";
 import { Link } from "react-router-dom";
 
 const PostDetail = () => {
   const { postId } = useParams();
-  const { state, setBookmark } = useContext(ForumContext);
+  const { state, setBookmark, dispatch } = useContext(ForumContext);
   console.log(state, "/// in home");
   const date = new Date();
   const currentTime = date.toISOString();
@@ -24,6 +28,21 @@ const PostDetail = () => {
     <main className="mt-xl">
       <div className="white-bg mr-xxl p-xs mt-s">
         <div className="flex flex-row nowrap p-xs">
+          <div>
+            <FontAwesomeIcon
+              icon={faSquarePlus}
+              onClick={() =>
+                dispatch({ type: "INCREMENT_VOTE", payload: user.postId })
+              }
+            />
+            {user.upvotes - user.downvotes}
+            <FontAwesomeIcon
+              icon={faMinusSquare}
+              onClick={() =>
+                dispatch({ type: "DECREMENT_VOTE", payload: user.postId })
+              }
+            />
+          </div>
           <div
             className="grey-bg br-full width-xl height-xl p-xs mr-xs"
             style={{ aspectRatio: 1 }}
