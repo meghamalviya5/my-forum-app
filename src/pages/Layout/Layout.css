@@ -1,0 +1,22 @@
+.layout-div {
+  /* background-color: gainsboro; */
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "nav-sidebar main filter-sidebar";
+  gap: 3rem;
+}
+
+.nav-sidebar1 {
+  grid-area: nav-sidebar;
+}
+
+.main-area {
+  grid-area: main;
+}
+
+.filter-sidebar2 {
+  grid-area: filter-sidebar;
+}
